@@ -7,20 +7,23 @@ console.log('JS OK')
 4) stampo un messaggio sull'esito del controllo
 */
 
-const RPGmail = ["mage@gmail.com","warrior@gmail.com","thief@gmail.com","healer@gmail.com" ];
+const RPGmail = ["mage@gmail.com","warrior@gmail.com","thief@gmail.com","healer@gmail.com"];
 const button = document.getElementById('button');
 
 button.addEventListener("click",function(){
 
-   
     const inputMail = document.getElementById('input').value;
+   
+    
+    for(let i=0; i < RPGmail.lenght; i++){
+        const singlemail=RPGmail[i];
 
-    if(inputMail === RPGmail[0]){
+    if(inputMail === singlemail){
         document.getElementById("authorize").innerText=('ACCESS ALLOWED ! WELCOME TO THIS LAND !')
         document.getElementById("authorize").classList.add("text-success");
         
-    }else if (inputMail !== RPGmail){
+    }else if (inputMail !== singlemail){
     document.getElementById("authorize").innerText=('ACCESS DENIED ! GO HOME OUTLANDER !')
     document.getElementById("authorize").classList.add("text-danger");
-}})
+}}})
 
