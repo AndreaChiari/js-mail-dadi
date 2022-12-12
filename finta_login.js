@@ -7,23 +7,25 @@ console.log('JS OK')
 4) stampo un messaggio sull'esito del controllo
 */
 
-const RPGmail = ["mage@gmail.com","warrior@gmail.com","thief@gmail.com","healer@gmail.com"];
 const button = document.getElementById('button');
+const RPGmail = ["mage@gmail.com","warrior@gmail.com","thief@gmail.com","healer@gmail.com"];
 
 button.addEventListener("click",function(){
+    const inputMail = document.getElementById('input');
+    
+    for(let i=0; i < RPGmail.length; i++){
+        const singlemail=RPGmail[i];
+        console.log(RPGmail.length);
 
-    const inputMail = document.getElementById('input').value;
+        if(inputMail === singlemail[i]){
+            document.getElementById("authorize").innerText=('ACCESS ALLOWED ! WELCOME TO THIS LAND !')
+            document.getElementById("authorize").classList.add("text-success");
+            
+        }else if (inputMail !== singlemail[i]){
+        document.getElementById("authorize").innerText=('ACCESS DENIED ! GO HOME OUTLANDER !')
+        document.getElementById("authorize").classList.add("text-danger");
+    }}})
    
     
-    for(let i=0; i < RPGmail.lenght; i++){
-        const singlemail=RPGmail[i];
 
-    if(inputMail === singlemail){
-        document.getElementById("authorize").innerText=('ACCESS ALLOWED ! WELCOME TO THIS LAND !')
-        document.getElementById("authorize").classList.add("text-success");
-        
-    }else if (inputMail !== singlemail){
-    document.getElementById("authorize").innerText=('ACCESS DENIED ! GO HOME OUTLANDER !')
-    document.getElementById("authorize").classList.add("text-danger");
-}}})
 
