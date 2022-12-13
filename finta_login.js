@@ -9,19 +9,22 @@ console.log('JS OK')
 
 const RPGmail = ["mage@gmail.com","warrior@gmail.com","thief@gmail.com","healer@gmail.com"];
 const button = document.getElementById('button');
-const input = document.getElementById('email');
+
 const authorize = document.getElementById('authorize');
 
 button.addEventListener("click",function(){
     
     let permission = false;
-    const inputMail = document.getElementById('input');
+    const input = document.getElementById('email').value;
+  
     for(let i = 0; !permission && i < RPGmail.length; i++){
     
         const singlemail=RPGmail[i];
         console.log(RPGmail.length);
 
-        if(inputMail === singlemail){
+        console.log("Giro:" + i + " - Mail utente:" + input + " - Mail ciclo:" + singlemail);
+
+        if(input === singlemail){
            permission = true;
         }
 }
